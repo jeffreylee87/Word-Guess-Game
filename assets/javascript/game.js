@@ -10,10 +10,12 @@ console.log(hiddenWord);
 var guessLeft = 5;
 var wins = 0;
 
+
+
 function startGame(userGuess) {
     if (userGuess !== -1) {
         document.querySelector("#lineToGuess").innerHTML = "<p>The Word: " + hiddenWord + "</p>";
-        // document.getElementById('audiotag').play(); sorry not working
+        document.getElementById('audiotag').play().autoplay; 
     }
 }
 
