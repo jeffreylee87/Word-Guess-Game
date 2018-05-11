@@ -1,15 +1,11 @@
 var djNames = ["martin garrix", "armin Van Buren", "tiesto", "david guetta", "tiesto", "steve aoki", "zedd",
     "calvin harris", "afrojack", "skrillex", "kshmr", "marshmello", "oliver heldens", "alan walker", "kygo", "diplo",
-    "dj snake", "fedde le grand"];
+    "dj snake", "fedde le grand", 'jeffrey sexy lee'];
 var pickWord = djNames[Math.floor(Math.random() * djNames.length)];
 console.log(pickWord);
 
-
-// var correctGuess = [];
-
 var hiddenWord = pickWord.replace(/[a-z]/g, "_");
 console.log(hiddenWord);
-
 
 var guessLeft = 5;
 var wins = 0;
@@ -51,7 +47,6 @@ function setWord() {
     document.getElementById("letGuessed").innerText = "";
     guessLeft = 5;
     document.querySelector("#guesses").textContent = `Number of Guesses Remaining: ${guessLeft}`;
-
 }
 
 document.onkeyup = function (event) {
@@ -68,6 +63,7 @@ document.onkeyup = function (event) {
             inputGuess(userGuess);
             document.querySelector("#lineToGuess").innerText = "TheWord: " + hiddenWord;
             if (pickWord === hiddenWord) {
+                document.querySelector("#lineToGuess").innerText = "TheWord: " + hiddenWord;
                 wins++;
                 document.querySelector("#wins").innerText = "Wins: " + wins;
                 alert("You Win!!!!!!");
@@ -82,10 +78,6 @@ document.onkeyup = function (event) {
     } else {
         alert("Only press letters, nothing else or else......");
     }
-
-
-
-
 
 };
 
