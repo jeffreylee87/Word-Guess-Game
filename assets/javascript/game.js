@@ -1,4 +1,4 @@
-var djNames = ["martin garrix", "armin Van Buren", "tiesto", "david guetta", "tiesto", "steve aoki", "zedd",
+var djNames = ["martin garrix", "armin van buren", "tiesto", "david guetta", "tiesto", "steve aoki", "zedd",
     "calvin harris", "afrojack", "skrillex", "kshmr", "marshmello", "oliver heldens", "alan walker", "kygo", "diplo",
     "dj snake", "fedde le grand", 'jeffrey sexy lee'];
 var pickWord = djNames[Math.floor(Math.random() * djNames.length)];
@@ -13,6 +13,7 @@ var wins = 0;
 function startGame(userGuess) {
     if (userGuess !== -1) {
         document.querySelector("#lineToGuess").innerHTML = "<p>The Word: " + hiddenWord + "</p>";
+        // document.getElementById('audiotag').play(); sorry not working
     }
 }
 
@@ -24,7 +25,7 @@ function decrease() {
 function endGame() {
     if (guessLeft === 0) {
         document.querySelector("#guesses").innerHTML = "<p>Number of Guesses Remaining: 0</p>";
-        alert("Game is over, loser!!!!");
+        alert("Game is over, loser!!!! I just took your girl!");
         location.reload();
     }
 }
@@ -48,6 +49,8 @@ function setWord() {
     guessLeft = 5;
     document.querySelector("#guesses").textContent = `Number of Guesses Remaining: ${guessLeft}`;
 }
+
+
 
 document.onkeyup = function (event) {
 
