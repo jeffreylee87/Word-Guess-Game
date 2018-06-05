@@ -1,1 +1,1 @@
-# Word-Guess-Game
+This is a simple hangman game that was edm themed. This was our first Javascript project for class. It taught me the fundamentals of basic Javascript. Great building block project and yes, I purposely made this game visually annoying, it helped me work on my CSS skills. 
