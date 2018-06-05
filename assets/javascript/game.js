@@ -50,6 +50,7 @@ function setWord() {
     document.getElementById("letGuessed").innerText = "";
     guessLeft = 5;
     document.querySelector("#guesses").textContent = `Number of Guesses Remaining: ${guessLeft}`;
+    document.querySelector("#lineToGuess").textContent = hiddenWord;
 }
 
 
@@ -64,16 +65,15 @@ document.onkeyup = function (event) {
 
     if (/^[a-z]/.test(userGuess)) {
         if (pickWord.indexOf(userGuess) !== -1) {
-            alert("picked correct letter");
             inputGuess(userGuess);
             document.querySelector("#lineToGuess").innerText = "TheWord: " + hiddenWord;
             if (pickWord === hiddenWord) {
                 document.querySelector("#lineToGuess").innerText = "TheWord: " + hiddenWord;
                 wins++;
                 document.querySelector("#wins").innerText = "Wins: " + wins;
-                alert("You Win!!!!!!");
+                document.querySelector(".title").innerText = "You Win!!! Feel free to keep playing Champ!";
                 setWord();
-                alert("Hit any letter to take a guess")
+                
             }
         } else {
             document.getElementById("letGuessed").innerHTML += userGuess;
